@@ -1,6 +1,6 @@
 void call()
 {
-	stage("JTE:Demo")
+	stage("JTE:Sample_Demo")
 	{
 		println"Welcome to JTE:Demo"
 	}
