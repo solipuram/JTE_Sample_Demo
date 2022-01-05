@@ -1,3 +1,3 @@
 libraries{
-    build
+    hello
 }
