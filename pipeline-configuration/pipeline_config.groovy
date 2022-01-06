@@ -1,4 +1,3 @@
 libraries{
-    hello
-    hellowithArgs
+    maven
 }
