@@ -1,3 +1,3 @@
-libraries{
+@merge libraries{
     maven
 }
