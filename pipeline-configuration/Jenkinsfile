@@ -1,2 +1,2 @@
 helloMethod()
-hellowithArgs()
+hellowithArgsMethod("JTE:DemoWithArgs")
