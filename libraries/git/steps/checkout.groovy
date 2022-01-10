@@ -10,7 +10,7 @@ void call ()
              git url: "${config.url}", 
              credentialsId: "${config.crednetialsId}", 
              branch: "${config.branch}"
-        
-        
+            sh "pwd"
+            sh "ls -l "
     }
 }
