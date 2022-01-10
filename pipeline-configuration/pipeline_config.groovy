@@ -11,6 +11,10 @@ libraries{
               name= "python-demo"
               dir="."
           }
+          registry{
+              url="solipuramsrinivas"
+              repository="docker-demo"
+          }
       }
   
 }
