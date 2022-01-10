@@ -2,5 +2,6 @@ helloMethod()
 node{
     checkout()
     buildImage()
+    pushImage()
 
 }
