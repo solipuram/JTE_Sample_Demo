@@ -6,5 +6,6 @@ libraries{
             credentialsId = "ci_workflow_demo"
             branch = "dev"
       }
+      docker
   
 }
