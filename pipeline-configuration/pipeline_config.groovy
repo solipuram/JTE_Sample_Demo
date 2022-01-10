@@ -17,7 +17,7 @@ libraries{
           }
           registry{
               url="hub.docker.com/solipuramsrinivas"
-              repository="docker-demo"
+              repository="python-demo"
           }
       }
   
