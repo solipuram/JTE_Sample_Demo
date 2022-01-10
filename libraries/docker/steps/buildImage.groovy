@@ -30,8 +30,5 @@ void docker_image_tagging()
 
 void pushImage()
 {
-    withDockerRegistry([ credentialsId: "docker_login", url: "http://hub.docker.com/" ]) 
-    {
-          sh  'docker push ${config.registry.url}/${config.registry.repository}/${config.image.name}:latest'
-    }
+    sh  'docker push ${config.registry.url}/${config.registry.repository}/${config.image.name}:latest'
 }
