@@ -5,9 +5,7 @@ void call
         container('jnlp')
         {
                echo " Working on Git Stage"
-               git url: "${config.url}",
-                   credentialsId: "${config.crednetialsId}",
-                   branch: "${config.branch}"
+               git url: "${config.url}", credentialsId: "${config.crednetialsId}", branch: "${config.branch}"
         }
     }
 }
