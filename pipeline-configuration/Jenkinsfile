@@ -1,8 +1,12 @@
 pipeline
 {
-    node any
+    agent any
+    stages 
+    {
+        helloMethod()
+        hellowithArgsMethod("JTE:DemoWithArgs")
+        checkout()
+    }
 
-    helloMethod()
-    hellowithArgsMethod("JTE:DemoWithArgs")
-    checkout()
+    
 }
