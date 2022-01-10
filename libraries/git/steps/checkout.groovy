@@ -6,9 +6,9 @@ void call
         {
                echo " Working on Git Stage"
 
-               git url: "${config.url}"
-                   branch: "${config.git.branch}",
-                   credentialsId: "${config.crednetialsId}"
+               git url: "${config.url}",
+                   credentialsId: "${config.crednetialsId}",
+                   branch: "${config.git.branch}"
         }
     }
 }
