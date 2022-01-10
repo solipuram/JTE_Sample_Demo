@@ -12,7 +12,7 @@ libraries{
               dir="."
           }
           login{
-              DOCKER_USERNAME= "solipuramsrinivas@gmail.com"
+              DOCKER_USERNAME= "solipuramsrinivas"
               DOCKER_PASSWORD="Dhanu@9968"
           }
           registry{
