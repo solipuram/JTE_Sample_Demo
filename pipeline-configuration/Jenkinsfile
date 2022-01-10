@@ -3,5 +3,6 @@ node{
     checkout()
     buildImage()
     pushImage()
+    pullImage()
 
 }

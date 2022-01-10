@@ -2,7 +2,7 @@ void call()
 {
 	stage("Docker:Push")
 	{
-		println"Docker Push Method"
+		println"Push  a Container to Docker Hub"
         
         echo "docker login -u ${config.login.DOCKER_USERNAME} -p ${config.login.DOCKER_PASSWORD} "
         sh "docker login -u  ${config.login.DOCKER_USERNAME} -p ${config.login.DOCKER_PASSWORD}"   

@@ -2,7 +2,7 @@ void call()
 {
 	stage("Docker:Build")
 	{
-		println"Docker Build Method"
+		println"Docker Container Build Stage"
         sh "docker -v"
         sh "docker build -t ${config.image.name} ${config.image.dir}"
         tag_image()
