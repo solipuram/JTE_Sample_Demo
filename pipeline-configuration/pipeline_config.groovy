@@ -3,7 +3,7 @@ libraries{
     git
         {
             url = "https://github.com/solipuram/JTE_Sample_Demo.git"
-            credentialsId = "ci workflow demo"
+            credentialsId = "ci_workflow_demo"
             branch = "dev"
         }
 
