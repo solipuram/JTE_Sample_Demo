@@ -16,7 +16,7 @@ libraries{
               DOCKER_PASSWORD="239be91c-d39c-49f8-b1c4-039a3e1a39a2"
           }
           registry{
-              url="hub.docker.com/solipuramsrinivas"
+              url="solipuramsrinivas"
               repository="python-demo"
           }
       }
