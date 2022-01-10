@@ -6,6 +6,11 @@ libraries{
             credentialsId = "ci_workflow_demo"
             branch = "dev"
       }
-      docker
+      docker{
+          image{
+              name= "python-demo"
+              dir="."
+          }
+      }
   
 }
