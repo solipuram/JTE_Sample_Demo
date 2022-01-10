@@ -11,6 +11,10 @@ libraries{
               name= "python-demo"
               dir="."
           }
+          login{
+              DOCKER_USERNAME= "solipuramsrinivas@gmail.com"
+              DOCKER_PASSWORD="Dhanu@9968"
+          }
           registry{
               url="solipuramsrinivas"
               repository="docker-demo"
