@@ -3,9 +3,10 @@ pipeline
     agent any
     stages 
     {
-        helloMethod()
-        hellowithArgsMethod("JTE:DemoWithArgs")
-        checkout()
+        stage("Checkout")
+        {
+            checkout()
+        }
     }
 
     
