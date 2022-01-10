@@ -7,11 +7,13 @@ void call()
         sh "docker build -t ${config.image.name} ${config.image.dir}"
 
         docker_image_tagging()
+        pushImage()
+
         //sh "docker images"
         // sh "docker rmi ${config.image.name}"
         // sh "docker images"
 
-        pushImage()
+        
 	}
 
 
