@@ -8,6 +8,7 @@ void call()
         sh "docker build -t ${config.image.name} ${config.image.dir}"
 
         sh "docker images"
+        sh "docker rmi ${config.image.name}"
 	}
 
 }
