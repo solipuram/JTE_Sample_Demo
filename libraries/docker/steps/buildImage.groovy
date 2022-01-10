@@ -32,7 +32,7 @@ void docker_image_tagging()
 
 void pushImage()
 {
-    echo "docker login ---username= ${config.login.DOCKER_USERNAME} --password=${config.login.DOCKER_PASSWORD} "
+    echo "docker login ---username= ${config.login.DOCKER_USERNAME} --password= ${config.login.DOCKER_PASSWORD} "
     sh "docker login --username = ${config.login.DOCKER_USERNAME} --password=${config.login.DOCKER_PASSWORD}"   
     echo "docker push ${config.registry.url}/${config.registry.repository}/${config.image.name}:latest"
     sh  "docker push ${config.registry.url}/${config.registry.repository}/${config.image.name}:latest"
