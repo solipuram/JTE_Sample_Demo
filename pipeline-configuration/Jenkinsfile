@@ -2,8 +2,24 @@ pipeline
 {
     agent any
     {
-            helloMethod()
-            checkout()
+        stages
+        {
+                stage('Hello')
+                {
+                    steps
+                    {
+                        helloMethod()
+                    }
+                }
+                stage('checkout')
+                {
+                    steps
+                    {
+                        checkout()
+                    }
+                }
+
+        }
     }
 }
 
