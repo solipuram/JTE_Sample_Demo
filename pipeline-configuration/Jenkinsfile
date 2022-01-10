@@ -1,3 +1,8 @@
-helloMethod()
-hellowithArgsMethod("JTE:DemoWithArgs")
-checkout()
+pipeline
+{
+    node any
+
+    helloMethod()
+    hellowithArgsMethod("JTE:DemoWithArgs")
+    checkout()
+}
