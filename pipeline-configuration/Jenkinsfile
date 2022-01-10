@@ -1,2 +1,9 @@
-helloMethod()
-checkout()
+pipeline
+{
+    agent any
+    {
+            helloMethod()
+            checkout()
+    }
+}
+
