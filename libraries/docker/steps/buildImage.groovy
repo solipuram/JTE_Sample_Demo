@@ -4,6 +4,7 @@ void call()
 	{
 		println"Docker Build Method"
         sh "docker -v"
+        sh " docker images"
 	}
 
 }
