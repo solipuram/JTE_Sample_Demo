@@ -12,7 +12,7 @@ libraries{
               dir="."
           }
           registry{
-              url="solipuramsrinivas"
+              url="hub.docker.com"
               repository="docker-demo"
           }
       }

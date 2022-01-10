@@ -26,9 +26,11 @@ void docker_image_tagging()
     sh "docker tag ${config.image.name}:latest ${config.registry.url}/${config.registry.repository}/${config.image.name}:latest"
     
     sh "docker images"
-}
-
-void pushImage()
-{
+    echo "docker push ${config.registry.url}/${config.registry.repository}/${config.image.name}:latest"
     sh  'docker push ${config.registry.url}/${config.registry.repository}/${config.image.name}:latest'
 }
+
+// void pushImage()
+// {
+//     sh  'docker push ${config.registry.url}/${config.registry.repository}/${config.image.name}:latest'
+// }
