@@ -1,6 +1,6 @@
 void call()
 {
-	stage("Docker:Push Method")
+	stage("Docker:Push")
 	{
 		println"Docker Push Method"
         
