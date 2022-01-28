@@ -4,7 +4,7 @@ void call()
 	{
 		println"Docker Container Build Stage"
         sh "docker -v"
-        sh "docker build -t ${config.image.name} ${config.image.dir}"
+        sh "docker build -t ${config.image.name}:${BUILD_NUMBER} ${config.image.dir}"
         tag_image()
        
         //sh "docker images"
@@ -17,8 +17,12 @@ void call()
 void tag_image()
 {
     echo "Image tagging method is called"
-    echo "docker tag ${config.image.name}:latest ${config.registry.url}/${config.registry.repository}:latest"
-    sh "docker tag ${config.image.name}:latest ${config.registry.url}/${config.registry.repository}:latest"
+    //echo "docker tag ${config.image.name}:latest ${config.registry.url}/${config.registry.repository}:latest"
+    //sh "docker tag ${config.image.name}:latest ${config.registry.url}/${config.registry.repository}:latest"
+   
+    echo "docker tag ${config.image.name}:${BUILD_NUMBER} ${config.registry.url}/${config.registry.repository}:${BUILD_NUMBER}"
+    sh "docker tag ${config.image.name}:${BUILD_NUMBER} ${config.registry.url}/${config.registry.repository}:${BUILD_NUMBER}"
+   
     sh "docker images"
 }
 
