@@ -8,8 +8,8 @@ void call()
         sh "docker login -u  ${config.login.DOCKER_USERNAME} -p ${config.login.DOCKER_PASSWORD}"   
         // echo "docker pull ${config.registry.url}/${config.registry.repository}:latest"
         // sh  "docker pull ${config.registry.url}/${config.registry.repository}:latest"
-        echo "docker pull ${config.registry.url}/${config.registry.repository}: ${BUILD_NUMBER}"
-        sh  "docker pull ${config.registry.url}/${config.registry.repository}: ${BUILD_NUMBER}"
+        echo "docker pull ${config.registry.url}/${config.registry.repository}:${BUILD_NUMBER}"
+        sh  "docker pull ${config.registry.url}/${config.registry.repository}:${BUILD_NUMBER}"
        
         sh "docker images"
     }
