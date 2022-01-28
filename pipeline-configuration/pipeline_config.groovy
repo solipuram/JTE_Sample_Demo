@@ -8,7 +8,7 @@ libraries{
       }
       docker{
           image{
-              name= "python-demo"
+              name= "flask-app"
               dir="."
           }
           login{
@@ -17,7 +17,7 @@ libraries{
           }
           registry{
               url="solipuramsrinivas"
-              repository="python-demo"
+              repository="flask-demo"
           }
       }
   
