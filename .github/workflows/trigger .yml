@@ -3,9 +3,11 @@ name: trigger job
 
 on:
   push:
-   branches: [ "develop" ]
+   branches:
+    - develop
+    - pr_test
   pull_request:
-    branches: [ "develop" ]
+    
 
 jobs:
   build:
@@ -20,7 +22,8 @@ jobs:
         env:
           GITHUB_BRANCH: ${{ github.head_ref || github.ref_name}}
       - name: Prints the current branch name
-        run: echo "${GITHUB_REF#refs/heads/}"
+        if: ${{ github.head_ref == 'merge'}}
+        run: echo "Welcome to merge"
         
         
          
