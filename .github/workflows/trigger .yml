@@ -24,11 +24,6 @@ jobs:
         run: echo "${GITHUB_BRANCH##*/}"
         env:
           GITHUB_BRANCH: ${{ github.ref_name}}
-      - name: conditon
-        if: ${{ ${GITHUB_BRANCH##*/} == 'merge' }}
-        run: echo hello world
-        env:
-          GITHUB_BRANCH: ${{ github.ref}} 
         
           
       
