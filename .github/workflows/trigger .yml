@@ -3,9 +3,9 @@ name: trigger job
 
 on:
   push:
-   branches: [ "main" ]
+   branches: [ "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
       - name: Prints the current branch name
         run: echo "${GITHUB_BRANCH##*/}"
         env:
-          GITHUB_BRANCH: ${{ github.ref_name }}
+          GITHUB_BRANCH: ${{ github.head_ref || github.ref_name}}
         
         
          
