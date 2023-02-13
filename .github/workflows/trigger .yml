@@ -21,6 +21,7 @@ jobs:
         run: echo running on branch ${GITHUB_REF##*/}
         env:
          BRANCH_NAME: ${GITHUB_REF##*/}
+        run: echo branch name ${BRANCH_NAME}
        
       
         
