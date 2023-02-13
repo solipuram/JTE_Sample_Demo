@@ -21,5 +21,10 @@ jobs:
         run: echo "branch name is ${GITHUB_BRANCH##*/}"
         env:
           GITHUB_BRANCH: ${{ github.ref }}
+      - name: prints the condition branch name
+        if: ${GITHUB_BRANCH##*/} == 'main'
+        run: echo welcome to main
+        
+         
       
         
