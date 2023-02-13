@@ -19,6 +19,8 @@ jobs:
         run: echo "${GITHUB_BRANCH##*/}"
         env:
           GITHUB_BRANCH: ${{ github.head_ref || github.ref_name}}
+      - name: Prints the current branch name
+        run: echo "${GITHUB_REF#refs/heads/}"
         
         
          
