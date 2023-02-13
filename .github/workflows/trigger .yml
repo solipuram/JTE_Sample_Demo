@@ -17,6 +17,12 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a one -line script
+      - name: Print the branch name
         run: echo running on branch ${GITHUB_REF##*/}
+        env:
+         BRANCH_NAME: ${GITHUB_REF##*/}
+      - name: Print the branch name
+        run: echo ${BRANCH_NAME} 
+       
+      
         
