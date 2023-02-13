@@ -3,7 +3,9 @@ name: trigger job
 
 on:
   push:
-   branches: [ "develop" ]
+   branches:
+    - develop
+    - pr_test
   pull_request:
     
 
