@@ -19,6 +19,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Prints the current branch name
         run: echo "branch name is ${GITHUB_BRANCH##*/}"
+        env:
+         GITHUB_BRANCH = ${{ github.ref }}
         
         
          
