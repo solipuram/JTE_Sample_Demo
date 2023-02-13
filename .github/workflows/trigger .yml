@@ -22,7 +22,7 @@ jobs:
         env:
          BRANCH_NAME: ${GITHUB_REF##*/}
       - name: Print the branch name
-        run: echo ${BRANCH_NAME} 
+        run: echo ${env.BRANCH_NAME} 
        
       
         
