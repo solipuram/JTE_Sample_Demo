@@ -21,7 +21,7 @@ jobs:
         shell: bash
         run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
       - name: debug
-        run: echo "${env.BRANCH_NAME}"
+        run: echo ${{env.BRANCH_NAME}}
        
       
         
