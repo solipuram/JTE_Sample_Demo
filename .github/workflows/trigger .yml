@@ -24,13 +24,7 @@ jobs:
         run: echo "${GITHUB_BRANCH##*/}"
         env:
           GITHUB_BRANCH: ${{ github.ref_name}}
-  test:
-    name: Test the conditon
-    if: ${{github.ref_name == 'master' || github.ref_name == 'develop' || contains(github.ref_name),'merge'}}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test passed 
-        run: echo Test, passed!
+  
     
       
         
