@@ -8,7 +8,7 @@ jobs:
       - name: Set envrmnt BRANCH
         id: vars
         run: |
-          echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+          echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 2)" >> $GITHUB_ENV
           echo "${{ steps.vars.output.branch }}"
 
       - name: Set env NEED
