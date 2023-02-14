@@ -3,7 +3,6 @@ name: trigger job
 on:
   push:
    branches:
-    - pr_test
     - develop
     
   pull_request:
@@ -12,10 +11,11 @@ on:
 jobs:
   find:
     name: find the branch name
+    if: ${{ contains(${{ github.ref_name}},'merge') }}    
     runs-on: ubuntu-latest
     steps:
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: test the job
+        run: echo Test Passed
       - name: Prints the ref branch name
         run: echo "${GITHUB_BRANCH##*/}"
         env:
@@ -24,9 +24,7 @@ jobs:
         run: echo "${GITHUB_BRANCH##*/}"
         env:
           GITHUB_BRANCH: ${{ github.ref_name}}
-      - name: test the job
-        if: ${{ contains(${{ github.ref_name}},'merge') }}
-        run: echo Test, passed!
+
   
     
       
