@@ -6,7 +6,9 @@ jobs:
     steps:
 
       - name: Set envrmnt BRANCH
-        run: echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+        run: |
+          echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+          echo "${{BRANCH}}"
 
       - name: Set env NEED
         run: |
