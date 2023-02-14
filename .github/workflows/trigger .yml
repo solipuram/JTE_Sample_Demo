@@ -10,7 +10,8 @@ on:
     
 
 jobs:
-  build:
+  find:
+    name: find the branch name
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
