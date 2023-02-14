@@ -24,12 +24,8 @@ jobs:
         run: echo "${GITHUB_BRANCH##*/}"
         env:
           GITHUB_BRANCH: ${{ github.ref_name}}
-  build:
-    name: build the job
-    if: ${{ contains('${{ github.ref_name}}','merge') }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run a one-line script
+      - name: test the job
+        if: ${{ contains(${{ github.ref_name}},'merge') }}
         run: echo Test, passed!
   
     
