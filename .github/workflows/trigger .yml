@@ -13,7 +13,7 @@ jobs:
           fi
       -  name: branch testing 
          run: |
-          if [[ $BRANCH == 'master' && $BRANCH == 'develop' && $BRANCH == 'merge' ]]; then
+          if [[ $BRANCH == 'master' || $BRANCH == 'develop' || $BRANCH == 'merge' ]]; then
               echo "this is merge branch: $BRANCH "
           else
               echo "this other branch"
