@@ -4,6 +4,8 @@ on:
   push:
    branches:
     - pr_test
+    - develop
+    
   pull_request:
     types: [opened]
     
