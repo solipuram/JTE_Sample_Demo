@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Set env BRANCH
+      - name: Set envrmnt BRANCH
         run: echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
 
       - name: Set env NEED
