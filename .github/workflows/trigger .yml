@@ -1,19 +1,25 @@
 name: CI
 on: [ pull_request, push ]
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: "Get branch name and save to env"
-        env:
-          IS_PR: ${{ github.EVENT_NAME == 'pull_request' }}
-        run: |
-          if ${IS_PR}; then
-            BRANCH_NAME="${GITHUB_HEAD_REF}"
-          else
-            BRANCH_NAME="${GITHUB_REF##*/}"
-          fi
-          echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
 
-      - name: "Another step uses branch name"
-        run: echo "Branch name is ${{ env.BRANCH_NAME }}"
+      - name: Set env BRANCH
+        run: echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+
+      - name: Set env NEED
+        run: |
+          if [[ $BRANCH == 'pr_test' && $GITHUB_EVENT_NAME == 'pull_request' ]]; then
+              echo "NEED=true" >> "$GITHUB_ENV"
+          else
+              echo "NEED=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Skip Deploy?
+        if: env.NEED != 'true'
+        run: echo "Only pushing to 'master' causes automatic deployment"
+
+      
+        
+        
