@@ -4,24 +4,25 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-
       - name: Set envrmnt BRANCH
-        id: vars
         run: |
-          echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 4)" >> $GITHUB_ENV
-          echo "${{ steps.vars.output.branch }}"
-
-      - name: Set env NEED
-        run: |
-          if [[ $BRANCH == 'pr_test' && $GITHUB_EVENT_NAME == 'pull_request' ]]; then
-              echo "NEED=true" >> "$GITHUB_ENV"
+          if [[ $GITHUB_EVENT_NAME == 'pull_request' ]]; then
+               echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 4)" >> $GITHUB_ENV
           else
-              echo "NEED=false" >> "$GITHUB_ENV"
+              echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+          fi
+      -  name: branch testing 
+         run: |
+          if [[ $BRANCH == 'merge' ]]; then
+              echo "this is merge branch "
+          else
+              echo "this other branch"
           fi
 
-      - name: Skip Deploy?
-        if: env.NEED != 'true'
-        run: echo "Only pushing to 'master' causes automatic deployment"
+ 
+        
+      
+          
 
       
         
