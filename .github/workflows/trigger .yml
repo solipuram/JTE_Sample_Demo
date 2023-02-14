@@ -9,7 +9,7 @@ jobs:
         id: vars
         run: |
           echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
-          echo "${{steps.vars.output.branch}}"
+          echo "${{ steps.vars.output.branch }}"
 
       - name: Set env NEED
         run: |
