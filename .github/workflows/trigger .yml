@@ -13,8 +13,8 @@ jobs:
           fi
       -  name: branch testing 
          run: |
-          if [[ $BRANCH == 'merge' ]]; then
-              echo "this is merge branch "
+          if [[ $BRANCH == 'merge' && $BRANCH== 'pr_test']]; then
+              echo "this is merge branch: $BRANCH "
           else
               echo "this other branch"
           fi
