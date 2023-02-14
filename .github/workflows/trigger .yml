@@ -1,34 +1,40 @@
 
 name: trigger job
-
 on:
   push:
    branches:
     - pr_test
   pull_request:
+    types: [opened]
     
-
 jobs:
-  build:
+  find:
+    name: find the branch name
     runs-on: ubuntu-latest
-
     steps:
-      # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
       - name: Prints the ref branch name
         run: echo "${GITHUB_BRANCH##*/}"
         env:
           GITHUB_BRANCH: ${{ github.ref}}
-      - name: Prints the head ref branch name
+      - name: Prints the  ref_name branch name
         run: echo "${GITHUB_BRANCH##*/}"
         env:
-          GITHUB_BRANCH: ${{ github.head_ref}}
-          
-      - name: Prints the current branch name
-        if: ${{ github.head_ref == 'merge'}}
-        run: echo "Welcome to merge"
+          GITHUB_BRANCH: ${{ github.ref_name}}
+  build:
+    name: build the job
+    if: ${{github.ref_name == 'master' || github.ref_name == 'develop' || contains('github.ref_name','merge')}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Test, passed!
+  
+    
+      
         
+          
+      
         
          
       
