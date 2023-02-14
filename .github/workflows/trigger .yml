@@ -4,6 +4,7 @@ on:
   push:
    branches:
     - develop
+    - pr test
     
   pull_request:
     types: [opened]
@@ -11,7 +12,7 @@ on:
 jobs:
   find:
     name: find the branch name
-    if: ${{ contains(${{ github.ref_name}},'merge') }}    
+    if: ${{ contains('${{ github.ref_name}}','merge') }}    
     runs-on: ubuntu-latest
     steps:
       - name: test the job
