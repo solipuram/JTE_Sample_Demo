@@ -26,7 +26,7 @@ jobs:
           GITHUB_BRANCH: ${{ github.ref_name}}
   build:
     name: build the job
-    if: ${{ contains(github.ref_name,'merge') }}
+    if: ${{ contains('Hello world', 'llo') }}
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
