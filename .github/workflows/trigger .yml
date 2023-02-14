@@ -24,7 +24,7 @@ jobs:
           GITHUB_BRANCH: ${{ github.ref_name}}
   build:
     name: build the job
-    if: ${{github.ref_name == 'master' || github.ref_name == 'develop' || contains(github.ref_name),'merge'}}
+    if: ${{github.ref_name == 'master' || github.ref_name == 'develop' || contains('github.ref_name','merge')}}
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
