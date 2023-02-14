@@ -1,38 +1,19 @@
-
-name: trigger job
-on:
-  push:
-   branches:
-    - develop
-    - pr test
-    
-  pull_request:
-    types: [opened]
-    
+name: CI
+on: [ pull_request, push ]
 jobs:
-  find:
-    name: find the branch name
-    if: ${{ contains('${{ github.ref_name}}','merge') }}    
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: test the job
-        run: echo Test Passed
-      - name: Prints the ref branch name
-        run: echo "${GITHUB_BRANCH##*/}"
+      - name: "Get branch name and save to env"
         env:
-          GITHUB_BRANCH: ${{ github.ref}}
-      - name: Prints the  ref_name branch name
-        run: echo "${GITHUB_BRANCH##*/}"
-        env:
-          GITHUB_BRANCH: ${{ github.ref_name}}
+          IS_PR: ${{ github.EVENT_NAME == 'pull_request' }}
+        run: |
+          if ${IS_PR}; then
+            BRANCH_NAME="${GITHUB_HEAD_REF}"
+          else
+            BRANCH_NAME="${GITHUB_REF##*/}"
+          fi
+          echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
 
-  
-    
-      
-        
-          
-      
-        
-         
-      
-        
+      - name: "Another step uses branch name"
+        run: echo "Branch name is ${{ env.BRANCH_NAME }}"
